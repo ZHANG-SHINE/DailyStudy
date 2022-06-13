@@ -6,22 +6,22 @@ using namespace MySpace;
 using namespace std;
 
 void func () {
-    LOG_INFO("THIS IS FUNC");
+    LOG_INFO << "THIS IS FUNC";
 }
 
 
 int main() {
-    LOG_INFO("this is main");
+    LOG_INFO << "this is main";
     func();
     thread th([] {
         for (int i = 0; i < 10; i++) {
-            LOG_DEBUG("this is thread-1");
+            LOG_DEBUG << "this is thread-1" << " " << i;
         }
     });
 
     thread th1([] {
         for (int i = 0; i < 10; i++) {
-            LOG_ERROR("this is thread-2");
+            LOG_DEBUG << "this is thread-2" << " " << i;
         }
     });
 
